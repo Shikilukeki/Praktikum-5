@@ -165,10 +165,10 @@ Loop untuk menampilkan menu utama dan pemilihan hingga pengguna memilih keluar (
 ![Image](https://github.com/Shikilukeki/Foto/blob/main/Tambah%20dan%20Lihat%20data%20mahasiswa.png?raw=true)
 
 ### Contoh hasil eksekusi untuk mengubah data mahasiswa:
-![Image]()
+![Image](https://github.com/Shikilukeki/Foto/blob/main/Ubah%20data%20mahasiswa.png?raw=true)
 
 ### Contoh eksekusi untuk menghapus data mahasiswa:
-![Image]()
+![Image](https://github.com/Shikilukeki/Foto/blob/main/Hapus%20data%20mahasiswa.png?raw=true)
 
 ### Contoh eksekusi untuk mencari data mahasiswa:
-![Image]()
+![Image](https://github.com/Shikilukeki/Foto/blob/main/Cari%20data%20mahasiswa.png?raw=true)
