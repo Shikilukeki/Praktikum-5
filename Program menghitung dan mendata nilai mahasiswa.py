@@ -7,52 +7,56 @@ data_mahasiswa = {}
 
 # Fungsi untuk menampilkan menu utama
 def menu_utama():
-    print("\nMenu Utama:")
-    print("1. Tambah Data")
-    print("2. Ubah Data")
-    print("3. Hapus Data")
-    print("4. Tampilkan Data")
-    print("5. Cari Data")
-    print("6. Keluar")
-    pilihan = input("Pilih menu (1-6): ")
+    print("Program mendata mahasiswa")
+    pilihan = input("[(t)ambah data, (u)bah data, (h)apus data, (c)ari data, (l)ihat data, (k)eluar] : ")
     return pilihan
 
 # Fungsi untuk menambah data mahasiswa
 def tambah_data():
-    nama = input("Masukkan nama: ")
-    nim = input("Masukkan NIM: ")
-    nilai_tugas = float(input("Masukkan nilai tugas: "))
-    nilai_uts = float(input("Masukkan nilai UTS: "))
-    nilai_uas = float(input("Masukkan nilai UAS: "))
-    
-    nilai_akhir = hitung_nilai_akhir(nilai_tugas, nilai_uts, nilai_uas)
-    data_mahasiswa[nim] = {
-        "nama": nama,
-        "nilai_tugas": nilai_tugas,
-        "nilai_uts": nilai_uts,
-        "nilai_uas": nilai_uas,
-        "nilai_akhir": nilai_akhir
-    }
-    print("Data berhasil ditambahkan.")
+    while True:
+        try:
+            nama = input("Masukkan nama: ")
+            nim = input("Masukkan NIM: ")
+            nilai_tugas = float(input("Masukkan nilai tugas: "))
+            nilai_uts = float(input("Masukkan nilai UTS: "))
+            nilai_uas = float(input("Masukkan nilai UAS: "))
+            
+            nilai_akhir = hitung_nilai_akhir(nilai_tugas, nilai_uts, nilai_uas)
+            data_mahasiswa[nim] = {
+                "nama": nama,
+                "nilai_tugas": nilai_tugas,
+                "nilai_uts": nilai_uts,
+                "nilai_uas": nilai_uas,
+                "nilai_akhir": nilai_akhir
+            }
+            print("Data berhasil ditambahkan.")
+            break
+        except ValueError:
+            print("Input tidak valid. Silakan coba lagi.")
 
 # Fungsi untuk mengubah data mahasiswa
 def ubah_data():
     nim = input("Masukkan NIM mahasiswa yang akan diubah: ")
     if nim in data_mahasiswa:
-        nama = input("Masukkan nama baru: ")
-        nilai_tugas = float(input("Masukkan nilai tugas baru: "))
-        nilai_uts = float(input("Masukkan nilai UTS baru: "))
-        nilai_uas = float(input("Masukkan nilai UAS baru: "))
-        
-        nilai_akhir = hitung_nilai_akhir(nilai_tugas, nilai_uts, nilai_uas)
-        data_mahasiswa[nim] = {
-            "nama": nama,
-            "nilai_tugas": nilai_tugas,
-            "nilai_uts": nilai_uts,
-            "nilai_uas": nilai_uas,
-            "nilai_akhir": nilai_akhir
-        }
-        print("Data berhasil diubah.")
+        while True:
+            try:
+                nama = input("Masukkan nama baru: ")
+                nilai_tugas = float(input("Masukkan nilai tugas baru: "))
+                nilai_uts = float(input("Masukkan nilai UTS baru: "))
+                nilai_uas = float(input("Masukkan nilai UAS baru: "))
+                
+                nilai_akhir = hitung_nilai_akhir(nilai_tugas, nilai_uts, nilai_uas)
+                data_mahasiswa[nim] = {
+                    "nama": nama,
+                    "nilai_tugas": nilai_tugas,
+                    "nilai_uts": nilai_uts,
+                    "nilai_uas": nilai_uas,
+                    "nilai_akhir": nilai_akhir
+                }
+                print("Data berhasil diubah.")
+                break
+            except ValueError:
+                print("Input tidak valid. Silakan coba lagi.")
     else:
         print("Data tidak ditemukan.")
 
@@ -77,7 +81,7 @@ def tampilkan_data():
             print(f"| {i:>2} | {mahasiswa['nama']:<25} | {nim:<9} | {mahasiswa['nilai_tugas']:<5} | {mahasiswa['nilai_uts']:<5} | {mahasiswa['nilai_uas']:<5} | {mahasiswa['nilai_akhir']:<17.2f} |")
             print("==========================================================================================")
     else:
-        print("|                             Belum ada data mahasiswa                                  |")
+        print("|                             Belum ada data mahasiswa                                   |")
         print("==========================================================================================")
 
 # Fungsi untuk mencari data mahasiswa
@@ -101,17 +105,17 @@ def cari_data():
 while True:
     pilihan = menu_utama()
     
-    if pilihan == '1':
+    if pilihan == 't':
         tambah_data()
-    elif pilihan == '2':
+    elif pilihan == 'u':
         ubah_data()
-    elif pilihan == '3':
+    elif pilihan == 'h':
         hapus_data()
-    elif pilihan == '4':
+    elif pilihan == 'l':
         tampilkan_data()
-    elif pilihan == '5':
+    elif pilihan == 'c':
         cari_data()
-    elif pilihan == '6':
+    elif pilihan == 'k':
         print("Keluar dari program. Terima kasih!")
         break
     else:
