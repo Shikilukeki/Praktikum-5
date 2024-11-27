@@ -157,7 +157,7 @@ while True:
         print("Pilihan tidak valid. Silakan coba lagi.")
 ```
 
-Loop untuk menampilkan menu utama dan pemilihan hingga pengguna memilih keluar (memasukan pilihan 6)
+Loop untuk menampilkan menu utama dan pemilihan hingga pengguna memilih keluar (memasukan pilihan k)
 
 ## Contoh hasil eksekusi program :
 
